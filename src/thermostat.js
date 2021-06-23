@@ -4,16 +4,16 @@ class Thermostat {
         this.minimumTemperature = 10
     }
 
-    #minimumTemperatureError(value) {
+    #minmaxTemperatureError(value) {
         if( this.currentTemperature < 10 ){
             this.currentTemperature += value;
-            throw 'Minimum temperature is 10 Degrees';
+            throw 'Minimum temperature is 10 Degrees!';
         }
     }
 
     #changeTemperature(value) {
         this.currentTemperature += value;
-        this.#minimumTemperatureError();
+        this.#minmaxTemperatureError();
     }
 
     increaseTemperature(value) {
