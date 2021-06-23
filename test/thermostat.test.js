@@ -1,4 +1,5 @@
 const assert = require('chai').assert;
+const expect = require('chai').expect;
 const Thermostat = require('../src/thermostat')
 
 describe('Testing Thermostat', function() {
@@ -6,6 +7,11 @@ describe('Testing Thermostat', function() {
         it('should begin with a temperature of 20 degrees', function() {
             let thermostat = new Thermostat;
             assert.strictEqual(thermostat.currentTemperature, 20)
+        })
+    
+        it('should have a minimum temperature of 10 degrees', function() {
+            let thermostat = new Thermostat;
+            expect(thermostat.decreaseTemperature(11)).to.throw('Minimum temperature is 10 Degrees');
         })
     })
 
@@ -22,5 +28,6 @@ describe('Testing Thermostat', function() {
             assert.strictEqual(thermostat.currentTemperature, 15);
         })
     })
+    
     
 })
