@@ -11,7 +11,10 @@ describe('Testing Thermostat', function() {
     
         it('should have a minimum temperature of 10 degrees', function() {
             let thermostat = new Thermostat;
-            expect(thermostat.decreaseTemperature(11)).to.throw('Minimum temperature is 10 Degrees');
+            expect(function() {
+                thermostat.decreaseTemperature(11)
+            }).to.throw('Minimum temperature is 10 Degrees');
+            // assert.strictEqual(thermostat.currentTemperature, 20)
         })
     })
 
