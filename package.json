@@ -1,0 +1,22 @@
+{
+  "name": "thermostatjs2",
+  "version": "1.0.0",
+  "description": "A simple exercise",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha || true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anioji94/thermostatJS2.git"
+  },
+  "author": "anioji94",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anioji94/thermostatJS2/issues"
+  },
+  "homepage": "https://github.com/anioji94/thermostatJS2#readme",
+  "dependencies": {
+    "esm": "^3.2.25"
+  }
+}
