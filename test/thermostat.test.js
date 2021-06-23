@@ -18,6 +18,13 @@ describe('Testing Thermostat', function() {
         })
     })
 
+    describe('Powersaving Mode', function() {
+        it('should have a powersaving mode', function() {
+            let thermostat = new Thermostat;
+            assert.exists(thermostat.powersavingMode)
+        })
+    })
+
     describe('#increaseTemperature/#decreaseTemperature', function() {
         it('should allow temperature to be increased', function() {
             let thermostat = new Thermostat;

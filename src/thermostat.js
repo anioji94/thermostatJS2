@@ -2,6 +2,7 @@ class Thermostat {
     constructor() {
         this.currentTemperature = 20
         this.minimumTemperature = 10
+        this.powersavingMode = true
     }
 
     #minmaxTemperatureError(value) {
