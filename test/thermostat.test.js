@@ -1,4 +1,5 @@
 const assert = require('chai').assert;
+const Thermostat = require('../src/thermostat')
 
 describe('Testing Thermostat', function() {
     describe('Temperature Read-out', () => {
