@@ -9,6 +9,9 @@ class Thermostat {
         if( this.currentTemperature < 10 ){
             this.currentTemperature += value;
             throw 'Minimum temperature is 10 Degrees!';
+        } else if( this.powersavingMode === true && this.currentTemperature > 25) {
+            this.currentTemperature -= value;
+            throw 'Powersaving Mode is On. Max temp is 25 Degrees';
         }
     }
 

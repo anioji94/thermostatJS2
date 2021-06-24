@@ -23,6 +23,29 @@ describe('Testing Thermostat', function() {
             let thermostat = new Thermostat;
             assert.exists(thermostat.powersavingMode)
         })
+
+        it('should, when active, cap the max temperature at 25 degrees', function() {
+            let thermostat = new Thermostat;
+            expect(function() {
+                thermostat.increaseTemperature(6);
+            }).to.throw('Powersaving Mode is On. Max temp is 25 Degrees')
+        })
+
+        it('should, when deactivated, allow temperature to exceed 25 Degrees', function() {
+            let thermostat = new Thermostat;
+            thermostat.powersavingMode = false
+            expect(function() {
+                thermostat.increaseTemperature(6);
+            }).to.not.throw()
+        })
+
+        it('should, when deactivated, cap the max temperature at 32 Degrees', function() {
+            let thermostat = new Thermostat;
+            thermostat.powersavingMode = false
+            expect(function() {
+                thermostat.increaseTemperature(13);
+            }).to.throw('Powersaving Mode is Off. Max temp is 32 Degrees')
+        })
     })
 
     describe('#increaseTemperature/#decreaseTemperature', function() {
