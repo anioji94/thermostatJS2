@@ -79,7 +79,6 @@ describe('Testing Thermostat', function() {
         it('should reset the temperature to 20', function() {
             let thermostat = new Thermostat;
             thermostat.increaseTemperature(3)
-            console.log(thermostat.currentTemperature)
             thermostat.resetTemperature()
             assert(thermostat.currentTemperature, 20)
         })

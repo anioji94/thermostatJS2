@@ -1,6 +1,7 @@
 class Thermostat {
     constructor() {
-        this.currentTemperature = 20
+        this.defaultTemperature = 20
+        this.currentTemperature = this.defaultTemperature
         this.psOnMaxTemperature = 25
         this.posOffMaxTemperature = 32
         this.minimumTemperature = 10
@@ -51,6 +52,10 @@ class Thermostat {
 
     onSwitchPowersaving() {
         this.powersavingMode = true
+    }
+
+    resetTemperature() {
+        this.currentTemperature = this.defaultTemperature
     }
 }
 
