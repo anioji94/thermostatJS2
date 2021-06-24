@@ -7,16 +7,28 @@ class Thermostat {
         this.powersavingMode = true
     }
 
+    #lowTempError(value) {
+        this.currentTemperature += value;
+        throw 'Minimum temperature is 10 Degrees!';
+    } 
+
+    #psOnHighTempError(value) {
+        this.currentTemperature -= value;
+        throw 'Powersaving Mode is On. Max temp is 25 Degrees';
+    }
+
+    #psOffHighTempError(value) {
+        this.currentTemperature -= value;
+        throw 'Powersaving Mode is Off. Max temp is 32 Degrees'
+    }
+
     #minmaxTemperatureError(value) {
         if( this.currentTemperature < 10 ){
-            this.currentTemperature += value;
-            throw 'Minimum temperature is 10 Degrees!';
+            this.#lowTempError(value)
         } else if( this.powersavingMode === true && this.currentTemperature > this.psOnMaxTemperature ) {
-            this.currentTemperature -= value;
-            throw 'Powersaving Mode is On. Max temp is 25 Degrees';
+            this.#psOnHighTempError(value)
         } else if ( this.powersavingMode === false && this.currentTemperature > this.posOffMaxTemperature ) {
-            this.currentTemperature -= value;
-            throw 'Powersaving Mode is Off. Max temp is 32 Degrees'
+            this.#psOffHighTempError(value)
         }
     }
 
