@@ -44,6 +44,14 @@ class Thermostat {
     decreaseTemperature(value) {
         this.#changeTemperature(value *= -1);
     }
+
+    offSwitchPowersaving() {
+        this.powersavingMode = false
+    }
+
+    onSwitchPowersaving() {
+        this.powersavingMode = true
+    }
 }
 
 module.exports = Thermostat;

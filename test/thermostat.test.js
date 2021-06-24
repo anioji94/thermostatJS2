@@ -46,6 +46,19 @@ describe('Testing Thermostat', function() {
                 thermostat.increaseTemperature(13);
             }).to.throw('Powersaving Mode is Off. Max temp is 32 Degrees')
         })
+
+        it('should allow users to deactivate Powersaving Mode', function() {
+            let thermostat = new Thermostat;
+            thermostat.offSwitchPowersaving()
+            assert.strictEqual(thermostat.powersavingMode, false)
+        })
+
+        it('should allow users to activate Powersaving Mode', function() {
+            let thermostat = new Thermostat;
+            thermostat.powersavingMode = false
+            thermostat.onSwitchPowersaving()
+            assert.strictEqual(thermostat.powersavingMode, true)
+        })
     })
 
     describe('#increaseTemperature/#decreaseTemperature', function() {
