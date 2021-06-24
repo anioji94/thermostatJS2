@@ -12,6 +12,9 @@ class Thermostat {
         } else if( this.powersavingMode === true && this.currentTemperature > 25) {
             this.currentTemperature -= value;
             throw 'Powersaving Mode is On. Max temp is 25 Degrees';
+        } else if ( this.powersavingMode === false && this.currentTemperature > 32) {
+            this.currentTemperature -= value;
+            throw 'Powersaving Mode is Off. Max temp is 32 Degrees'
         }
     }
 
