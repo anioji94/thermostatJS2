@@ -57,6 +57,16 @@ class Thermostat {
     resetTemperature() {
         this.currentTemperature = this.defaultTemperature
     }
+
+    energyReport() {
+        if( this.currentTemperature < 18 ) {
+            return 'Low Usage'
+        } else if( this.currentTemperature > 18 && this.currentTemperature <= 25 ) {
+            return 'Medium Usage'
+        } else if( this.currentTemperature > 25 ) {
+            return 'High Usage'
+        }
+    }
 }
 
 module.exports = Thermostat;
