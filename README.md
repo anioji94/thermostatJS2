@@ -1,6 +1,33 @@
 # Thermostat in Javascript
 A quick exercise to help me solidify my JS foundational knowledge.
 
+## User Stories
+```
+As a User
+So that I can know how warm it is now
+I would like to be able to see the current temperature
+
+As a User
+So that I can make it warmer
+I would like to be able to increase the temperature
+
+As a User 
+So that I can make it colder
+I would like to be able to decrease the temperature
+
+As a User
+So that I do not waste too much energy
+I would like to be able to activate a Powersaving Mode
+
+As a User
+So that I can use more energy if I need to
+I would like to be able to deactivate Powersaving Mode
+
+As a User
+So that I know how much energy I'm using
+I would like the power usage to be visible
+```
+
 ### Tech Used
 - Mocha and Chai JS for testing purposes
 - Everything installed via NPM
