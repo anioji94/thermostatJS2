@@ -4,6 +4,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        function setBodyAttr(attr, value) {
+            if(document.body) {
+                document.body[attr] = value;
+            } else {
+                throw new Error("no support");
+            }
+        }
+    </script>
     <title>Thermostat</title>
 </head>
 <body onload="window.alert('Please leave my site. I did not invite you in. Thanks.')">
@@ -15,6 +24,14 @@
         Powersaving mode is <span id="power-saving-status">on</span>
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
+    </p>
+
+    <p>
+    <select onchange="setBodyAttr('bgColor',
+       this.options[this.selectedIndex].value);">
+        <option value="white">white</option>
+        <option value="green">green</option>   
+    </select> 
     </p>
     <script src="../src/thermostat.js"></script>
 </body>
