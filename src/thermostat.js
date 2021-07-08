@@ -69,4 +69,4 @@ class Thermostat {
     }
 }
 
-module.exports = Thermostat;
+module.exports = Thermostat
