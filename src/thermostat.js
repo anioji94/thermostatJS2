@@ -48,10 +48,12 @@ class Thermostat {
 
     offSwitchPowersaving() {
         this.powersavingMode = false
+        return 'off'
     }
 
     onSwitchPowersaving() {
         this.powersavingMode = true
+        return 'on'
     }
 
     resetTemperature() {
@@ -59,7 +61,7 @@ class Thermostat {
     }
 
     energyReport() {
-        if( this.currentTemperature < 18 ) {
+        if( this.currentTemperature <= 18 ) {
             return 'Low Usage'
         } else if( this.currentTemperature > 18 && this.currentTemperature <= 25 ) {
             return 'Medium Usage'
