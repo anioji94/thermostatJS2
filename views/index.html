@@ -15,6 +15,7 @@
     </script>
     <script src="/src/thermostat.js"></script>
     <script src="/src/app.js"></script>
+    <link rel="stylesheet" href="/views/stylesheet.css">
     <title>Thermostat</title>
 </head>
 <body>
@@ -27,7 +28,7 @@
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
     </p>
-
+    <span id="energy-usage"></span>
     <p>
     <select onchange="setBodyAttr('bgColor',
        this.options[this.selectedIndex].value);">
