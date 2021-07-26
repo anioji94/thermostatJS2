@@ -44,7 +44,7 @@
             })
             .then((data) => {
                 document.querySelector('#weather')
-                .innerHTML = `<h3>${data.name}</h3>`
+                .innerHTML = `<h3>City: ${data.name}</h3>\n<p>Temperature: ${data.main.temp - 273.15}</p>`
             })
         })
     </script>
