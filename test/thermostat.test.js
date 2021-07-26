@@ -89,23 +89,20 @@ describe('Testing Thermostat', function() {
             it('should consider temperatures below 18 as "Low Usage"', function() {
                 let thermostat = new Thermostat;
                 thermostat.decreaseTemperature(3)
-                assert.strictEqual(thermostat.energyReport(), 'Low Usage')
+                assert.strictEqual(thermostat.energyReport(), 'low-usage')
             })
 
             it('should consider temperatures less than 26 and above 18 as "Medium Usage"', function() {
                 let thermostat = new Thermostat;
-                assert.strictEqual(thermostat.energyReport(), 'Medium Usage')
+                assert.strictEqual(thermostat.energyReport(), 'medium-usage')
             })
 
             it('should consider temperatures greater than 25 as "High Usage"', function() {
                 let thermostat = new Thermostat;
                 thermostat.offSwitchPowersaving()
                 thermostat.increaseTemperature(10)
-                assert.strictEqual(thermostat.energyReport(), 'High Usage')
+                assert.strictEqual(thermostat.energyReport(), 'high-usage')
             })
         })
-    })
-    
-    
-    
+    })   
 })

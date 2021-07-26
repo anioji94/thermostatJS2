@@ -6,6 +6,7 @@ class Thermostat {
         this.posOffMaxTemperature = 32
         this.minimumTemperature = 10
         this.powersavingMode = true
+        this.energyUsage = this.energyReport()
     }
 
     #lowTempError(value) {
@@ -36,13 +37,14 @@ class Thermostat {
     #changeTemperature(value) {
         this.currentTemperature += value;
         this.#minmaxTemperatureError();
+        this.energyReport();
     }
 
-    increaseTemperature(value) {
+    increaseTemperature(value = 1) {
         this.#changeTemperature(value);
     }
 
-    decreaseTemperature(value) {
+    decreaseTemperature(value = 1) {
         this.#changeTemperature(value *= -1);
     }
 
@@ -62,11 +64,11 @@ class Thermostat {
 
     energyReport() {
         if( this.currentTemperature <= 18 ) {
-            return 'Low Usage'
+            return 'low-usage'
         } else if( this.currentTemperature > 18 && this.currentTemperature <= 25 ) {
-            return 'Medium Usage'
+            return 'medium-usage'
         } else if( this.currentTemperature > 25 ) {
-            return 'High Usage'
+            return 'high-usage'
         }
     }
 }
