@@ -37,16 +37,22 @@ document.addEventListener("DOMContentLoaded", () => {
         thermostat.offSwitchPowersaving()
         document.querySelector('#power-saving-status').innerText = 'off'
     })
-})
 
-/**
- *     <p>
-        <button id="temperature-up">+</button>
-        <button id="temperature-down">-</button>
-        <button id="temperature-reset">reset</button>
-        Powersaving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
-    </p>
-    <span id="energy-usage"></span>
- */
+    // API Calls
+    document.querySelector('#select-city').addEventListener('submit', (event) => {
+        event.preventDefault()
+        console.log('submit')
+        const city = document.querySelector('#current-city').value
+        const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=3778fc05401d0fdfe10f9f06a9e65c02&units=metric`
+        fetch(url)
+        .then((response) => {
+            console.log('response')
+            return response.json()
+        })
+        .then((data) => {
+            console.log('then')
+            document.querySelector('#weather')
+            .innerHTML = `<h3>City: ${data.name}</h3>\n<p>Temperature: ${data.main.temp}</p>`
+        })
+    })
+})

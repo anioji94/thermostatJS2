@@ -35,17 +35,20 @@
             console.log("howdy")
         })
     </script> -->
+    <!-- <select id="current-city">
+        <option value="London">London</option>
+        <option value="New york">New York</option>
+        <option value="Paris">Paris</option>
+        <option value="Tokyo">Tokyo</option>
+    </select> -->
+    <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a City">
+        <input type="submit">
+    </form>
     <div id="weather"></div>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            fetch('https://api.openweathermap.org/data/2.5/weather?q=london&appid=3778fc05401d0fdfe10f9f06a9e65c02')
-            .then((response) => {
-                return response.json()
-            })
-            .then((data) => {
-                document.querySelector('#weather')
-                .innerHTML = `<h3>City: ${data.name}</h3>\n<p>Temperature: ${data.main.temp - 273.15}</p>`
-            })
+
         })
     </script>
     <h1 id="temperature"></h1>
@@ -59,11 +62,11 @@
     </p>
     <span id="energy-usage"></span>
     <p>
-    <select onchange="setBodyAttr('bgColor',
+    <!-- <select onchange="setBodyAttr('bgColor',
        this.options[this.selectedIndex].value);">
         <option value="white">white</option>
         <option value="green">green</option>   
-    </select> 
+    </select>  -->
     </p>
     <script src="../src/thermostat.js"></script>
 </body>
