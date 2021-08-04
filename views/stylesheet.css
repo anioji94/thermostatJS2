@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 #temp-controls {
@@ -10,21 +11,14 @@ body {
     margin: 20px auto;
     position:relative;
 }
-
 h1 {
     font-size: 2000;
 }
 
 #temperature-up {
-    position:absolute;
-    top: 40px;
-    right: 30px;
 }
 
 #temperature-down {
-    position:absolute;
-    top: 40px;
-    left: 30px;
 }
 
 
