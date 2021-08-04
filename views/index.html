@@ -19,28 +19,6 @@
     <title>Thermostat</title>
 </head>
 <body>
-    <!-- <div id="dog-pics"></div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            
-                fetch('https://dog.ceo/api/breeds/image/random')
-                    .then((response) => {
-                        return response.json()
-                    })
-                    .then((data) => {
-                        document.querySelector('#dog-pics')
-                        .innerHTML = `<img src= ${data.message} >`
-                    })
-        
-            console.log("howdy")
-        })
-    </script> -->
-    <!-- <select id="current-city">
-        <option value="London">London</option>
-        <option value="New york">New York</option>
-        <option value="Paris">Paris</option>
-        <option value="Tokyo">Tokyo</option>
-    </select> -->
     <form id="select-city">
         <input id="current-city" type="text" placeholder="Enter a City">
         <input type="submit">
@@ -51,23 +29,18 @@
 
         })
     </script>
-    <h1 id="temperature"></h1>
-    <p>
-        <button id="temperature-up">+</button>
+    <div id="temp-controls">
         <button id="temperature-down">-</button>
+        <h1 id="temperature"></h1>
+        <button id="temperature-up">+</button>
+    </div>
+    <p>
         <button id="temperature-reset">reset</button>
         Powersaving mode is <span id="power-saving-status">on</span>
         <button id="powersaving-on">PSM on</button>
         <button id="powersaving-off">PSM off</button>
     </p>
     <span id="energy-usage"></span>
-    <p>
-    <!-- <select onchange="setBodyAttr('bgColor',
-       this.options[this.selectedIndex].value);">
-        <option value="white">white</option>
-        <option value="green">green</option>   
-    </select>  -->
-    </p>
     <script src="../src/thermostat.js"></script>
 </body>
 </html>

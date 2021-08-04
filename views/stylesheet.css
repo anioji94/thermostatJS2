@@ -1,3 +1,33 @@
+body {
+    text-align: center;
+}
+
+#temp-controls {
+    border: 5px red solid;
+    padding-top: 5%;
+    max-width: 250px;
+    max-height: 80px;
+    margin: 20px auto;
+    position:relative;
+}
+
+h1 {
+    font-size: 2000;
+}
+
+#temperature-up {
+    position:absolute;
+    top: 40px;
+    right: 30px;
+}
+
+#temperature-down {
+    position:absolute;
+    top: 40px;
+    left: 30px;
+}
+
+
 .low-usage {
     color: green;
   }
