@@ -38,15 +38,13 @@
         </button>
         <button id="temperature-reset">reset</button>
     </div>
-    <p>
+    <div id="power-saving-controls">
         <label class="switch">
-            <input type="checkbox">
+            <input id="ps-switch" type="checkbox" checked="true">
             <span class="slider round"></span>
         </label>
         Powersaving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
-    </p>
+    </div>
     <span id="energy-usage"></span>
     <script src="../src/thermostat.js"></script>
 </body>

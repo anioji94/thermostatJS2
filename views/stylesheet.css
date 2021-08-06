@@ -11,6 +11,16 @@ body {
     margin: 20px auto;
     position:relative;
 }
+
+#power-saving-controls {
+  border: 5px blue solid;
+  padding-top: 5px;
+  max-width: 250px;
+  max-height: 80px;
+  margin: 20px auto;
+  position: relative;
+}
+
 h1 {
     font-size: 2000;
 }
@@ -36,7 +46,7 @@ h1 {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(95, 190, 253);
+    background-color:lightgray;
     -webkit-transition: .4s;
     transition: .4s;
   }
@@ -54,11 +64,11 @@ h1 {
   }
   
   input:checked + .slider {
-    background-color: hsl(0, 90%, 54%);
+    background-color: rgb(23, 202, 23);
   }
   
   input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
+    box-shadow: 0 0 1px lightgray;
   }
   
   input:checked + .slider:before {
