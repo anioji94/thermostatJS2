@@ -18,36 +18,39 @@
     <link rel="stylesheet" href="/views/stylesheet.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
     <title>Thermostat</title>
 </head>
 <body>
-    <div id="custom-city">
-        <form id="select-city">
-            <input id="current-city" type="text" placeholder="Enter a City">
-            <input type="submit">
-        </form>
+    <div id="container">
+        <div id="temp-controls">
+            <button id="temperature-up" class="btn btn-primary btn-block">
+                Temperature Up <i class="fas fa-arrow-up"></i>
+            </button>
+            <h1><span id="temperature"></span>&#176;C</h1>
+            <button id="temperature-down" class="btn btn-primary btn-block">
+                Temperature Down <i class="fas fa-arrow-down"></i>
+            </button>
+            <button id="temperature-reset" class="btn btn-danger btn-block">Reset Temperature</button>
+        </div>
+        <div id="custom-city">
+            <form id="select-city">
+                <input id="current-city" class="form-control" type="text" placeholder="Enter a City">
+                <input type="submit" class="btn btn-success">
+            </form>
+        </div>
+        <div id="weather"></div>
+        <p>
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            Powersaving mode is <span id="power-saving-status">on</span>
+            <button id="powersaving-on">PSM on</button>
+            <button id="powersaving-off">PSM off</button>
+        </p>
+        <span id="energy-usage"></span>
+        <script src="../src/thermostat.js"></script>
     </div>
-    <div id="weather"></div>
-    <h1 id="temperature"></h1>
-    <div id="temp-controls">
-        <button id="temperature-down">
-            <i class="fas fa-arrow-down"></i>
-        </button>
-        <button id="temperature-up">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        <button id="temperature-reset">reset</button>
-    </div>
-    <p>
-        <label class="switch">
-            <input type="checkbox">
-            <span class="slider round"></span>
-        </label>
-        Powersaving mode is <span id="power-saving-status">on</span>
-        <button id="powersaving-on">PSM on</button>
-        <button id="powersaving-off">PSM off</button>
-    </p>
-    <span id="energy-usage"></span>
-    <script src="../src/thermostat.js"></script>
 </body>
 </html>

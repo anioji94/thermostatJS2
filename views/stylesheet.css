@@ -1,18 +1,50 @@
 body {
     text-align: center;
     font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100vh;
+
+    border: yellow 2px solid;
+}
+
+#container {
+  margin: auto;
 }
 
 #temp-controls {
-    border: 5px red solid;
-    padding-top: 5%;
-    max-width: 250px;
-    max-height: 80px;
-    margin: 20px auto;
-    position:relative;
+  /* border-width: 5px;
+  border-style: solid;
+  border-color: red; */
+
+  margin: auto;
+  /* padding: 10px; */
+
+
+  width: 80%;
 }
-h1 {
-    font-size: 2000;
+
+#temp-controls h1 {
+  font-size: 8em;
+}
+
+#select-city {
+  display: flex;
+  padding: 10px;
+}
+
+#city-temp {
+  background: lightgray;
+  padding: 1px 25px 25px 25px;
+  border-radius: 10px;
+}
+
+#text-city-temp {
+  color: black;
+  opacity: 1;
 }
 
 /* The switch - the box around the slider */
@@ -41,44 +73,44 @@ h1 {
     transition: .4s;
   }
   
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  input:checked + .slider {
-    background-color: hsl(0, 90%, 54%);
-  }
-  
-  input:focus + .slider {
-    box-shadow: 0 0 1px #2196F3;
-  }
-  
-  input:checked + .slider:before {
-    -webkit-transform: translateX(26px);
-    -ms-transform: translateX(26px);
-    transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: hsl(106, 79%, 41%);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 
 .low-usage {
-    color: green;
-  }
+  color: green;
+}
   
 .medium-usage {
     color: black;

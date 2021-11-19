@@ -48,7 +48,11 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .then((data) => {
             document.querySelector('#weather')
-            .innerHTML = `<h3>City: ${data.name}</h3>\n<p>Temperature: ${data.main.temp}</p>`
+            .innerHTML = `<div id="city-temp">
+            <div id="text-city-temp">
+                <h3>${data.name}</h3>\n<p>Temperature: ${data.main.temp}&#176;C</p>
+            </div>
+            </div>`
         })
     }
     
