@@ -27,17 +27,33 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 
     // Powersaving Mode On
-    document.querySelector('#powersaving-on').addEventListener('click', () => {
+    // document.querySelector('#powersaving-on').addEventListener('click', () => {
+    //     thermostat.onSwitchPowersaving()
+    //     document.querySelector('#power-saving-status').innerText = 'on'
+    // })
+
+    var checkbox = document.querySelector('#ps-switch')
+
+    function psOn() {
         thermostat.onSwitchPowersaving()
         document.querySelector('#power-saving-status').innerText = 'on'
-    })
-
+    }
+    
     // Powersaving Mode Off
-    document.querySelector('#powersaving-off').addEventListener('click', () => {
+    function psOff() {
         thermostat.offSwitchPowersaving()
         document.querySelector('#power-saving-status').innerText = 'off'
+    }
+    
+    checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+            console.log('howdy')
+            psOn()
+        } else {
+            console.log('eyyo')
+            psOff()
+        }
     })
-
     // API Calls
     
     const displayWeather = (city) => {

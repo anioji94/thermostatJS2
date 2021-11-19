@@ -68,7 +68,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgb(95, 190, 253);
+    background-color:lightgray;
     -webkit-transition: .4s;
     transition: .4s;
   }
